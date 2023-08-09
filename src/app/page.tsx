@@ -7,8 +7,8 @@ export default function Home() {
     <AuthProvider>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-       <h1>Home page</h1>
-       <p>Some content</p>
+       <h1>Notes</h1>
+       <p>Welcome to the AI assisted notes tool</p>
        <LoginComponent />
       </div>
     </main>

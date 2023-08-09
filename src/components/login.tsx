@@ -6,15 +6,15 @@ export const LoginComponent = () => {
   console.log('>>>', {status, session});
   return (
     <div>
-      <p>Sign in:</p>
-      <p>{status}</p>
       <SignInButton />
     </div>
   )
 }
 
-export const SignInButton = () => {
-  return (
-    <button onClick={() => signIn('google')}>Sign in with Google</button>
-  )
-}
+export const SignInButton = () => (
+  <button className="bg-indigo-500 rounded p-2 my-2" onClick={() => signIn()}>Sign in with Google</button>
+);
+
+export const LoginButton = () => (
+  <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => signIn()}>Log in <span aria-hidden="true">&rarr;</span></button>
+);
