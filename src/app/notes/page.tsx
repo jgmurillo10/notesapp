@@ -10,10 +10,8 @@ export const dynamic = 'auto',
   preferredRegion = 'auto';
 
 async function getNotes() {
-  const db = new PocketBase('http://127.0.0.1:8090');
+  const db = new PocketBase(process.env.NEXT_PUBLIC_POCKET_BASE_PROD);
   const data = await db.collection('notes').getList();
-  // const res = await fetch('http://127.0.0.1:8090/api/collections/notes/records?page=1&perPage=30');
-  // const data = await res.json();
 
   return data?.items as any[];
 }

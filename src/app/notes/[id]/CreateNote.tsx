@@ -8,7 +8,7 @@ export default function CreateNote() {
   const [content, setContent] = useState('');
   const router = useRouter();
   const create = async () => {
-    await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
+    await fetch(`${process.env.NEXT_PUBLIC_POCKET_BASE_PROD}/api/collections/notes/records`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

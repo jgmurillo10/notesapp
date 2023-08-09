@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase'
 
 async function getNote(noteId: string) {
-  const db = new PocketBase('http://127.0.0.1:8090');
+  const db = new PocketBase(process.env.NEXT_PUBLIC_POCKET_BASE_PROD);
   const data = await db.collection('notes').getOne(noteId);
 
   return data;
