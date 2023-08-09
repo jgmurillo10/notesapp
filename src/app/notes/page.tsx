@@ -20,7 +20,7 @@ export default async function NotesPage () {
   return (
     <div>
       <h1>Notes</h1>
-      <div className="flex flex-row">
+      <div className="flex flex-row flex-wrap">
         {notes?.map((note) => {
           return <Note key={note.id} note={note} />
         })}
