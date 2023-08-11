@@ -14,6 +14,10 @@ export const Chat = ({ role }: { role: string; }) => {
     setMessages([roles[role as keyof typeof roles] as Message]);
   }, []);
 
+  useEffect(() => {
+    console.log('>>>', {messages})
+  }, [messages]);
+
   if (status === 'loading') {
     return <p>Loading...</p>
   }
