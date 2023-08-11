@@ -15,7 +15,7 @@ export const Chat = ({ role }: { role: string; }) => {
   }, []);
 
   useEffect(() => {
-    console.log('>>>', {messages})
+    console.log('>>>', {messages, role, roles})
   }, [messages]);
 
   if (status === 'loading') {
