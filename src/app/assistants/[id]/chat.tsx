@@ -1,20 +1,33 @@
 "use client";
 import { useChat } from 'ai/react'
 import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
+import { roles } from './roles';
+import type { Message } from 'ai/react';
+import { LoginComponent } from '@/components/login';
 
-export const Chat = () => {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
-  const { data: session } = useSession();
+export const Chat = ({ role }: { role: string; }) => {
+  const { messages, input, handleInputChange, handleSubmit, setMessages } = useChat();
+  const { data: session, status } = useSession();
+
+  useEffect(() => {
+    setMessages([roles[role as keyof typeof roles] as Message]);
+  }, []);
+
+  if (status === 'loading') {
+    return <p>Loading...</p>
+  }
 
   if (!session) {
-    return <h2>You must login</h2>
+    return <>
+      <LoginComponent />
+    </>;
   }
 
   return (
     <div>
-      <h2>Chat</h2>
       <div className="mx-auto w-full max-w-md py-24 flex flex-col stretch">
-        {messages.map(m => (
+        {messages.filter(m => m.role !== 'system').map(m => (
           <div key={m.id}>
             {m.role === 'user' ? 'User: ' : 'AI: '}
             {m.content}

@@ -12,7 +12,7 @@ export default async function NotesPage () {
   const assistants = await getAssistants();
   return (
     <div>
-      <h1>Assistants</h1>
+      <h1 className="my-2">Assistants</h1>
       <div className="flex flex-row flex-wrap">
         {assistants?.map((assistant) => {
           return <Assistant key={assistant.id} assistant={assistant} />
