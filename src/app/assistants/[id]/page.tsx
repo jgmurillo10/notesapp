@@ -1,4 +1,5 @@
 import PocketBase from 'pocketbase'
+import { Chat } from './chat';
 
 async function getAssistant(assistantId: string) {
   const db = new PocketBase(process.env.NEXT_PUBLIC_POCKET_BASE_PROD);
@@ -18,6 +19,7 @@ export default async function AssistantPage({ params }: any) {
         <p>{assistant.description}</p>
         <p>{assistant.created}</p>
       </div>
+      <Chat />
     </div>
   )
 }
