@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getAssistants() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_POCKET_BASE_PROD}/api/collections/assistants/records`, {
-    cache: 'no-cache',
+    cache: 'no-store',
   });
   const data = await response.json();
 
