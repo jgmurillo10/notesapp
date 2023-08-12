@@ -19,9 +19,6 @@ export const NavBar = ({ children }: {
           <Link href="/" className="text-sm font-semibold leading-6 text-gray-900">
             Home
           </Link>
-          <Link href="/notes" className="text-sm font-semibold leading-6 text-gray-900">
-            Notes
-          </Link>
           <Link href="/assistants" className="text-sm font-semibold leading-6 text-gray-900">
             Assistants
           </Link>
