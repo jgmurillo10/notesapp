@@ -7,16 +7,10 @@ import type { Message } from 'ai/react';
 import { LoginComponent } from '@/components/login';
 
 export const Chat = ({ role }: { role: string; }) => {
-  const { messages, input, handleInputChange, handleSubmit, setMessages } = useChat();
+  const { messages, input, handleInputChange, handleSubmit, setMessages } = useChat({
+    initialMessages: [roles[role as keyof typeof roles] as Message],
+  });
   const { data: session, status } = useSession();
-
-  useEffect(() => {
-    setMessages([roles[role as keyof typeof roles] as Message]);
-  }, []);
-
-  useEffect(() => {
-    console.log('>>>', {messages, role, roles})
-  }, [messages]);
 
   if (status === 'loading') {
     return <p>Loading...</p>
