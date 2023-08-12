@@ -4,6 +4,11 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 export const LoginComponent = () => {
   const { data: session, status } = useSession();
   console.log('>>>', {status, session});
+
+  if (status === 'loading' || session) {
+    return null;
+  }
+
   return (
     <div>
       <SignInButton />
@@ -20,7 +25,7 @@ export const LoginButton = () => {
 
   if (session) {
     return (
-      <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => signOut()}>Log out <span aria-hidden="true">&larr;</span></button>
+      <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => signOut()}><span aria-hidden="true">&larr;</span> Log out</button>
     );
   }
 

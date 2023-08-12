@@ -47,7 +47,7 @@ export const Chat = ({ role }: { role: string; }) => {
               onChange={handleInputChange}
             />
           </label>
-          <button type="submit">Send</button>
+          <button className="bg-indigo-500 rounded p-2 my-2" type="submit">Send</button>
         </form>
       </div>
     </div>

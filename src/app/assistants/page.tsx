@@ -14,7 +14,7 @@ export default async function NotesPage () {
   const assistants = await getAssistants();
   return (
     <div>
-      <h1 className="my-2">Assistants</h1>
+      <h1 className="my-2 text-4xl">Assistants</h1>
       <div className="flex flex-row flex-wrap">
         {assistants?.map((assistant) => {
           return <Assistant key={assistant.id} assistant={assistant} />
@@ -26,14 +26,13 @@ export default async function NotesPage () {
 
 function Assistant({ assistant }: any) {
   const { id, name, description, created } = assistant || {};
+  const createdDate = new Date(created);
 
   return (
-    <Link href={`/assistants/${id}`}>
-      <div className="bg-slate-900 m-2 p-2 h-48">
-        <h2>{name}</h2>
-        <div>{description}</div>
-        <p>{created}</p>
-      </div>
+    <Link href={`/assistants/${id}`} className="basis-full bg-slate-900 p-2 mt-2">
+      <h2 className="text-xl">{name}</h2>
+      <div className="my-2">{description}</div>
+      <p className="text-xs absolute bottom-2">{createdDate.toDateString()}</p>
     </Link>
-  )
+  );
 }
