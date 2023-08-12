@@ -2,8 +2,10 @@ import PocketBase from 'pocketbase'
 import Link from "next/link";
 
 async function getAssistants() {
-  const db = new PocketBase(process.env.NEXT_PUBLIC_POCKET_BASE_PROD);
-  const data = await db.collection('assistants').getList();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_POCKET_BASE_PROD}/api/collections/assistants/records`, {
+    cache: 'no-cache',
+  });
+  const data = await response.json();
 
   return data?.items as any[];
 }
