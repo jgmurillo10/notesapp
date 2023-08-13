@@ -1,10 +1,10 @@
 "use client";
 import { useChat } from 'ai/react'
 import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
 import { roles } from './roles';
 import type { Message } from 'ai/react';
 import { LoginComponent } from '@/components/login';
+import { Spinner } from '@/components/spinner';
 
 export const Chat = ({ role }: { role: string; }) => {
   const { messages, input, handleInputChange, handleSubmit, setMessages } = useChat({
@@ -13,7 +13,7 @@ export const Chat = ({ role }: { role: string; }) => {
   const { data: session, status } = useSession();
 
   if (status === 'loading') {
-    return <p>Loading...</p>
+    return <Spinner />;
   }
 
   if (!session) {

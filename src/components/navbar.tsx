@@ -10,7 +10,7 @@ export const NavBar = ({ children }: {
     <header className="bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 px-8" aria-label="Global">
         <div className="flex flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="text-sm font-semibold leading-6 text-gray-900">AIssistant</span>
             <span className="text-xl font-semibold leading-6 text-gray-900 ml-2">🤖</span>
           </a>

@@ -29,7 +29,7 @@ function Assistant({ assistant }: any) {
   const createdDate = new Date(created);
 
   return (
-    <Link href={`/assistants/${id}`} className="basis-full bg-slate-900 p-2 mt-2">
+    <Link href={`/assistants/${id}`} className="basis-full bg-slate-900 p-6 mt-2 relative">
       <h2 className="text-xl">{name}</h2>
       <div className="my-2">{description}</div>
       <p className="text-xs absolute bottom-2">{createdDate.toDateString()}</p>
