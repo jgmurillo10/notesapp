@@ -37,3 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ### Setup
 https://github.com/pocketbase/pocketbase/discussions/537
 
+
+## Testing
+npm run test
