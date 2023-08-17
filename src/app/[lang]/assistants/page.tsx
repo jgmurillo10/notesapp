@@ -1,5 +1,7 @@
 import PocketBase from 'pocketbase'
 import Link from "next/link";
+import { Locale } from '../../../../i18n-config';
+import { getDictionary } from '../../../../get-dictionary';
 
 async function getAssistants() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_POCKET_BASE_PROD}/api/collections/assistants/records`, {
@@ -10,11 +12,17 @@ async function getAssistants() {
   return data?.items as any[];
 }
 
-export default async function NotesPage () {
+export default async function NotesPage({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
   const assistants = await getAssistants();
+  const dictionary = await getDictionary(lang);
+
   return (
     <div>
-      <h1 className="my-2 text-4xl">Assistants</h1>
+      <h1 className="my-2 text-4xl">{dictionary['assistants'].assistants}</h1>
       <div className="flex flex-row flex-wrap">
         {assistants?.map((assistant) => {
           return <Assistant key={assistant.id} assistant={assistant} />
