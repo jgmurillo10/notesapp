@@ -56,6 +56,17 @@ export function middleware(request: NextRequest) {
       )
     )
   }
+
+  /** 
+   * TODO: Validate and remove if necessary.
+  */
+  if (request.nextUrl.locale === '') {
+    const locale = request.cookies.get('NEXT_LOCALE')?.value || 'en'
+ 
+    return NextResponse.redirect(
+      new URL(`/${locale}${request.nextUrl.pathname}${request.nextUrl.search}`, request.url)
+    )
+  }
 }
 
 export const config = {
