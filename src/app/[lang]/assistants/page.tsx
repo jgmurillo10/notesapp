@@ -25,19 +25,19 @@ export default async function NotesPage({
       <h1 className="my-2 text-4xl">{dictionary['assistants'].assistants}</h1>
       <div className="flex flex-row flex-wrap">
         {assistants?.map((assistant) => {
-          return <Assistant key={assistant.id} assistant={assistant} />
+          return <Assistant key={assistant.id} assistant={assistant} locale={lang} />
         })}
       </div>
     </div>
   );
 }
 
-function Assistant({ assistant }: any) {
+function Assistant({ assistant, locale }: any) {
   const { id, name, description, created } = assistant || {};
   const createdDate = new Date(created);
 
   return (
-    <Link href={`/assistants/${id}`} className="basis-full bg-slate-900 p-6 mt-2 relative">
+    <Link href={`/${locale}/assistants/${id}`} locale={false} className="basis-full bg-slate-900 p-6 mt-2 relative">
       <h2 className="text-xl">{name}</h2>
       <div className="my-2">{description}</div>
       <p className="text-xs absolute bottom-2">{createdDate.toDateString()}</p>
