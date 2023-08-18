@@ -1,5 +1,15 @@
 {
   "assistants": {
     "assistants": "Assistants"
+  },
+  "home": {
+    "hello": "Hi",
+    "hero": "Welcome to the AI assisted notes tool"
+  },
+  "navigation": {
+    "home": "Home",
+    "assistants": "Assistants",
+    "login": "Login",
+    "logout": "Logout"
   }
 }

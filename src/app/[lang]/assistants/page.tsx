@@ -1,4 +1,3 @@
-import PocketBase from 'pocketbase'
 import Link from "next/link";
 import { Locale } from '../../../../i18n-config';
 import { getDictionary } from '../../../../get-dictionary';

@@ -1,5 +1,15 @@
 {
   "assistants": {
     "assistants": "Asistentes"
+  },
+  "home": {
+    "hello": "Hola",
+    "hero": "Bienvenido a la herramienta de toma de notas"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "assistants": "Asistentes",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
   }
 }
