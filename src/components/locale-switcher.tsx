@@ -15,11 +15,11 @@ export const LocaleSwitcher = () => {
 
   return (
     <div>
-      <p>Locale switcher:</p>
-      <ul>
+      <ul className="flex text-sm text-gray-500 sm:text-center dark:text-gray-400 uppercase">
+        <li className="mr-2">🌍</li>
         {i18n.locales.map((locale) => {
           return (
-            <li key={locale}>
+            <li key={locale} className="mr-2">
               <Link href={redirectedPathName(locale)}>{locale}</Link>
             </li>
           )

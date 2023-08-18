@@ -3,7 +3,6 @@ import { LoginButton } from '@/components/login'
 import Link from 'next/link'
 import AuthProvider from '@/app/[lang]/AuthProvider';
 import { Locale } from '../../i18n-config';
-import { LocaleSwitcher } from './locale-switcher';
 
 export const NavBar = ({ children, lang }: {
   children: React.ReactNode,
@@ -23,9 +22,6 @@ export const NavBar = ({ children, lang }: {
             </Link>
           </div>
           <div className="flex gap-x-2 lg:flex lg:gap-x-12">
-            <Link href={home} locale={false} className="text-sm font-semibold leading-6 text-gray-900">
-              Home
-            </Link>
             <Link href={assistants} locale={false} className="text-sm font-semibold leading-6 text-gray-900">
               Assistants
             </Link>
@@ -35,7 +31,6 @@ export const NavBar = ({ children, lang }: {
           </div>
         </nav>
       </header>
-      <LocaleSwitcher />
       {children}
     </AuthProvider>
   );

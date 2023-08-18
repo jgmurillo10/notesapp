@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { NavBar } from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react';
 import { Locale, i18n } from '../../../i18n-config';
+import { Footer } from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <NavBar lang={lang}>
           {children}
         </NavBar>
+        <Footer />
         <Analytics />
       </body>
     </html>
