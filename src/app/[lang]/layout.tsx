@@ -25,12 +25,12 @@ export default function RootLayout({
   params: { lang: Locale }
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang={lang} className="dark">
+      <body className="dark:bg-black text-black dark:text-white">
         <NavBar lang={lang}>
           {children}
         </NavBar>
-        <Footer />
+        <Footer lang={lang} />
         <Analytics />
       </body>
     </html>

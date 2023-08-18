@@ -41,7 +41,7 @@ export const Chat = ({ role }: { role: string; }) => {
               onChange={handleInputChange}
             />
           </label>
-          <button className="bg-indigo-500 rounded p-2 my-2" type="submit">Send</button>
+          <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-900 focus:outline-none dark:focus:ring-blue-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" type="submit">Send</button>
         </form>
       </div>
     </div>
