@@ -11,5 +11,8 @@
     "assistants": "Assistants",
     "login": "Login",
     "logout": "Logout"
+  },
+  "footer": {
+    "made": "Made in Colombia 🇨🇴"
   }
 }

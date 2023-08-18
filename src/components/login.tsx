@@ -20,15 +20,23 @@ export const SignInButton = () => (
 );
 
 export const LoginButton = () => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+
+  if (status === 'loading') {
+    return (
+      <div role="status" className="max-w-sm animate-pulse flex align-center">
+        <div className="h-6 bg-slate-300 rounded-full dark:bg-slate-400 w-16 sm:w-20"></div>
+      </div>
+    );
+  }
 
   if (session) {
     return (
-      <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => signOut()}><span aria-hidden="true">&larr;</span> Log out</button>
+      <button className="text-sm font-semibold leading-6 text-gray-900 dark:text-white" onClick={() => signOut()}><span aria-hidden="true">&larr;</span> Log out</button>
     );
   }
 
   return (
-    <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => signIn()}>Log in <span aria-hidden="true">&rarr;</span></button>
+    <button className="text-sm font-semibold leading-6 text-gray-900 dark:text-white" onClick={() => signIn()}>Log in <span aria-hidden="true">&rarr;</span></button>
   );
 }

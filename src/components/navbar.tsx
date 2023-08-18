@@ -13,15 +13,15 @@ export const NavBar = ({ children, lang }: {
 
   return (
     <AuthProvider>
-      <header className="bg-white">
+      <header className="bg-white shadow-sm dark:shadow-white dark:bg-black">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 px-8" aria-label="Global">
           <div className="flex flex-1">
             <Link href={home} locale={false} className="-m-1.5 p-1.5">
-              <span className="text-sm font-semibold leading-6 text-gray-900">Inicio</span>
+              <span className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Inicio</span>
             </Link>
           </div>
           <div className="flex gap-x-2 lg:flex lg:gap-x-12">
-            <Link href={assistants} locale={false} className="text-sm font-semibold leading-6 text-gray-900">
+            <Link href={assistants} locale={false} className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
               Assistants
             </Link>
           </div>
