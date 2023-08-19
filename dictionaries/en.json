@@ -14,5 +14,8 @@
   },
   "footer": {
     "made": "Made in Colombia 🇨🇴"
+  },
+  "auth": {
+    "signInWithGoogle": "Sign in with Google"
   }
 }

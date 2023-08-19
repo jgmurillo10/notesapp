@@ -1,4 +1,4 @@
-import { LoginComponent } from '@/components/login';
+import { LoginComponent } from '@/components/auth/auth';
 import { getDictionary } from '../../../get-dictionary';
 import { Locale } from '../../../i18n-config';
 

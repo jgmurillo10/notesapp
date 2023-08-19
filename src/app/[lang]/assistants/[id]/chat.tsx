@@ -3,7 +3,7 @@ import { useChat } from 'ai/react'
 import { useSession } from 'next-auth/react';
 import { roles } from './roles';
 import type { Message } from 'ai/react';
-import { LoginComponent } from '@/components/login';
+import { LoginComponent } from '@/components/auth/auth';
 import { Spinner } from '@/components/spinner';
 
 export const Chat = ({ role }: { role: string; }) => {

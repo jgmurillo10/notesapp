@@ -5,6 +5,7 @@ import { NavBar } from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react';
 import { Locale, i18n } from '../../../i18n-config';
 import { Footer } from '@/components/footer';
+import { NextAuthProvider } from '../providers';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,11 +28,12 @@ export default function RootLayout({
   return (
     <html lang={lang} className="dark">
       <body className="dark:bg-black text-black dark:text-white">
-        <NavBar lang={lang}>
-          {children}
-        </NavBar>
-        <Footer lang={lang} />
-        <Analytics />
+        <NextAuthProvider>
+          <NavBar lang={lang} />
+            {children}
+          <Footer lang={lang} />
+          <Analytics />
+        </NextAuthProvider>
       </body>
     </html>
   );

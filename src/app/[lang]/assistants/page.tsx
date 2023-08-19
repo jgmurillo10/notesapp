@@ -36,7 +36,7 @@ function Assistant({ assistant, locale }: any) {
   const createdDate = new Date(created);
 
   return (
-    <Link href={`/${locale}/assistants/${id}`} locale={false} className="basis-full shadow dark:bg-gray-800 p-6 mt-2 relative">
+    <Link href={`/${locale}/assistants/${id}`} locale={false} className="basis-full rounded shadow shadow-slate-300 hover:shadow-slate-400 transition-all dark:shadow-gray-900 hover:dark:shadow-gray-700 dark:bg-gray-800 p-6 mt-4 relative">
       <h2 className="text-xl">{name}</h2>
       <div className="my-2">{description}</div>
       <p className="text-xs absolute bottom-2">{createdDate.toDateString()}</p>
