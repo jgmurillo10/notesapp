@@ -5,7 +5,7 @@ import { NavBar } from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react';
 import { Locale, i18n } from '../../../i18n-config';
 import { Footer } from '@/components/footer';
-import { NextAuthProvider } from '../providers';
+import { NextAuthProvider, ThemeProvider } from '../providers';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,14 +26,16 @@ export default function RootLayout({
   params: { lang: Locale }
 }) {
   return (
-    <html lang={lang} className="dark">
-      <body className="dark:bg-black text-black dark:text-white">
+    <html lang={lang} suppressHydrationWarning>
+      <body className={`${inter.className} dark:bg-black text-black bg-white dark:text-white`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <NextAuthProvider>
           <NavBar lang={lang} />
             {children}
           <Footer lang={lang} />
           <Analytics />
         </NextAuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

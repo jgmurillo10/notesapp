@@ -34,7 +34,7 @@ export const LoginButton = () => {
   if (status === 'loading') {
     return (
       <div role="status" className="max-w-sm animate-pulse flex align-center">
-        <div className="h-6 bg-slate-300 rounded-full dark:bg-slate-400 w-16 sm:w-20"></div>
+        <div className="h-8 bg-slate-300 rounded-full dark:bg-slate-400 w-16 sm:w-20"></div>
       </div>
     );
   }

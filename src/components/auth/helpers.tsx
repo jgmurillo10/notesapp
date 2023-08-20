@@ -1,6 +1,4 @@
 import { signIn, signOut } from 'next-auth/react'
-import { getDictionary } from "../../../get-dictionary";
-import { Locale } from "../../../i18n-config";
 
 type Props = {
   hasSession: boolean;

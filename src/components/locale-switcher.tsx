@@ -21,7 +21,7 @@ export const LocaleSwitcher = () => {
         <li className="mr-2">🌍</li>
         {i18n.locales.map((locale) => {
           return (
-            <li key={locale} className={lang === locale ? 'text-black px-1 bg-white mr-2' : 'mr-2 px-1'}>
+            <li key={locale} className={lang === locale ? 'text-black px-1 bg-slate-200 dark:bg-white mr-2' : 'mr-2 px-1'}>
               <Link href={redirectedPathName(locale)}>{locale}</Link>
             </li>
           )

@@ -23,6 +23,7 @@
     "negotiator": "^0.6.3",
     "next": "13.4.13",
     "next-auth": "^4.22.5",
+    "next-themes": "^0.2.1",
     "openai-edge": "^1.2.2",
     "pocketbase": "^0.16.0",
     "postcss": "8.4.27",
