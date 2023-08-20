@@ -18,9 +18,7 @@ export const Chat = ({ role }: { role: string }) => {
   }
 
   if (!session) {
-    return (
-      <LoginComponent />
-    );
+    return <LoginComponent />;
   }
 
   return (

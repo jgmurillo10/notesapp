@@ -38,3 +38,7 @@ next-env.d.ts
 # pocketbase
 /pb_data
 /pb_migrations
+
+# markdown
+
+.md
