@@ -1,6 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai-edge';
-import { OpenAIStream, StreamingTextResponse } from 'ai'
-
+import { OpenAIStream, StreamingTextResponse } from 'ai';
 
 const configuration = new Configuration({ apiKey: process.env.OPEN_AI_SECRET });
 const openai = new OpenAIApi(configuration);
@@ -50,16 +49,16 @@ const cfp = `
 `;
 
 export async function POST(req: Request) {
-  const { messages } = await req.json()
+  const { messages } = await req.json();
 
   const response = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: 'gpt-3.5-turbo',
     stream: true,
     messages: [
       {
-        role: "system",
+        role: 'system',
         content: cfp,
-      } ,
+      },
       ...messages,
     ],
   });

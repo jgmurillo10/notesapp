@@ -7,8 +7,8 @@ const nextConfig = {
         destination: '/en',
         permanent: true,
       },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,4 +1,4 @@
-import PocketBase from 'pocketbase'
+import PocketBase from 'pocketbase';
 import { Chat } from './chat';
 import Link from 'next/link';
 import { getDictionary } from '../../../../../get-dictionary';
@@ -10,7 +10,7 @@ async function getAssistant(assistantId: string) {
   return data;
 }
 
-export default async function AssistantPage({ params: { id, lang} }: any) {
+export default async function AssistantPage({ params: { id, lang } }: any) {
   const assistant = await getAssistant(id);
   const dictionary = await getDictionary(lang);
 
@@ -19,7 +19,8 @@ export default async function AssistantPage({ params: { id, lang} }: any) {
       <h1 className="my-2 text-4xl truncate">
         <Link href={`/${lang}/assistants`} locale={false}>
           {dictionary['assistants'].assistants}
-        </Link>/{assistant.id}
+        </Link>
+        /{assistant.id}
       </h1>
       <div className="my-2">
         <h3>🤖: {assistant.name}</h3>
@@ -28,5 +29,5 @@ export default async function AssistantPage({ params: { id, lang} }: any) {
       </div>
       <Chat role={assistant.gpt_id} />
     </div>
-  )
+  );
 }

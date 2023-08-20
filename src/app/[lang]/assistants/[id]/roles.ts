@@ -43,7 +43,7 @@ export const roles = {
       - the topic should be advanced
       - the proposal is easy to scan
       - the proposal includes audience takeaways
-    `
+    `,
   },
   translator: {
     id: 'translator',
@@ -51,6 +51,6 @@ export const roles = {
     content: `
       Your are a spellchecker.
       You review the writing and propose changes if needed.
-    `
+    `,
   },
 };

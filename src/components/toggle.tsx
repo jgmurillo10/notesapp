@@ -1,15 +1,14 @@
-"use client";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+'use client';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
-
 
   if (!mounted) {
     return (
@@ -22,9 +21,9 @@ export const ThemeSwitcher = () => {
   return (
     <button
       className={`ml-3 w-8 h-8 text-2xl rounded-full hover:scale-110 active:scale-100 duration-200 bg-slate-200 dark:bg-[#212933]`}
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === "light" ? "🌛" : "☀️"}
+      {theme === 'light' ? '🌛' : '☀️'}
     </button>
   );
 };
