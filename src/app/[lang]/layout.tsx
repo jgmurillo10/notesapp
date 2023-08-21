@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Locale, i18n } from '../../../i18n-config';
 import { Footer } from '@/components/footer';
 import { NextAuthProvider, ThemeProvider } from '../providers';
+import { Header } from '@/components/header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +18,11 @@ export const metadata: Metadata = {
 export async function generateStaticParams() {
   return i18n.locales.map((locale: Locale) => ({ lang: locale }));
 }
+
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'Assistants', href: '/assistants' },
+];
 
 export default function RootLayout({
   children,
@@ -32,8 +38,10 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextAuthProvider>
-            <NavBar lang={lang} />
-            {children}
+            <Header navigation={navigation} lang={lang} />
+            <main className="relative isolate min-h-screen px-6 pt-14 lg:px-8">
+              {children}
+            </main>
             <Footer lang={lang} />
             <Analytics />
           </NextAuthProvider>

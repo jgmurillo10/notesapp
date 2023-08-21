@@ -10,12 +10,10 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <h1>{dictionary['home'].hello}</h1>
-        <p>{dictionary['home'].hero}</p>
-        <LoginComponent />
-      </div>
-    </main>
+    <>
+      <h1 className="my-2 text-4xl">{dictionary['home'].hello}</h1>
+      <p>{dictionary['home'].hero}</p>
+      <LoginComponent />
+    </>
   );
 }
