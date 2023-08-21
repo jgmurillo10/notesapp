@@ -2,7 +2,6 @@ import { LoginButton } from '@/components/auth/auth';
 import Link from 'next/link';
 import { Locale } from '../../i18n-config';
 import { getDictionary } from '../../get-dictionary';
-import { ThemeSwitcher } from './toggle';
 
 export const NavBar = async ({ lang }: { lang: Locale }) => {
   const home = `/${lang}/`;
@@ -33,7 +32,6 @@ export const NavBar = async ({ lang }: { lang: Locale }) => {
         </div>
         <div className="flex flex-1 justify-end lg:flex lg:flex-1 lg:justify-end">
           <LoginButton />
-          <ThemeSwitcher />
         </div>
       </nav>
     </header>

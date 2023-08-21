@@ -1,6 +1,7 @@
 'use client';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -19,11 +20,19 @@ export const ThemeSwitcher = () => {
   }
 
   return (
-    <button
-      className={`ml-3 w-8 h-8 text-2xl rounded-full hover:scale-110 active:scale-100 duration-200 bg-slate-200 dark:bg-[#212933]`}
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-    >
-      {theme === 'light' ? '🌛' : '☀️'}
-    </button>
+    <div className="rounded-full flex border border-slate-200 p-1">
+      <MoonIcon
+        className={`rounded-full p-1 mr-1 w-5 h-5 text-xl dark:text-black hover:scale-110 active:scale-100 duration-200 ${
+          theme === 'dark' ? 'bg-slate-200' : ''
+        }`}
+        onClick={() => setTheme('dark')}
+      />
+      <SunIcon
+        className={`rounded-full p-[2px] w-5 h-5 text-xl hover:scale-110 active:scale-100 duration-200 ${
+          theme === 'light' ? 'bg-slate-200' : ''
+        }`}
+        onClick={() => setTheme('light')}
+      />
+    </div>
   );
 };
