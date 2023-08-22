@@ -22,13 +22,13 @@ export const ThemeSwitcher = () => {
   return (
     <div className="rounded-full flex border border-slate-200 p-1">
       <MoonIcon
-        className={`rounded-full p-1 mr-1 w-5 h-5 text-xl dark:text-black hover:scale-110 active:scale-100 duration-200 ${
+        className={`hover:cursor-pointer rounded-full p-1 mr-1 w-5 h-5 text-xl dark:text-black hover:scale-110 active:scale-100 duration-200 ${
           theme === 'dark' ? 'bg-slate-200' : ''
         }`}
         onClick={() => setTheme('dark')}
       />
       <SunIcon
-        className={`rounded-full p-[2px] w-5 h-5 text-xl hover:scale-110 active:scale-100 duration-200 ${
+        className={`hover:cursor-pointer rounded-full p-[2px] w-5 h-5 text-xl hover:scale-110 active:scale-100 duration-200 ${
           theme === 'light' ? 'bg-slate-200' : ''
         }`}
         onClick={() => setTheme('light')}

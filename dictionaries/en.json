@@ -6,6 +6,12 @@
     "hello": "Hi",
     "hero": "Welcome to the AI assisted notes tool"
   },
+  "hero": {
+    "heading": "AI assistants to improve your productivity",
+    "description": "Discover and try AI-powered assistants for your writing tasks. If none of them are suitable, create your own.",
+    "cta": "Get started",
+    "link": "Learn more"
+  },
   "navigation": {
     "home": "Home",
     "assistants": "Assistants",
