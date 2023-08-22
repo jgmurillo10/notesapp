@@ -12,6 +12,17 @@
     "cta": "Get started",
     "link": "Learn more"
   },
+  "newsletter": {
+    "heading": "Subscribe to our newsletter.",
+    "description": "Keep up to date with our latest releases and more.",
+    "email_address": "Email address",
+    "email_placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "weekly_articles": "Weekly articles",
+    "weekly_articles_description": "We post weekly articles with all the stack and implementation details for this tool.",
+    "no_spam": "No spam",
+    "no_spam_description": "We respect your privacy. We won't share your personal data with no one else. We won't send you emails non-related with the product."
+  },
   "navigation": {
     "home": "Home",
     "assistants": "Assistants",

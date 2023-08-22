@@ -39,7 +39,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextAuthProvider>
             <Header navigation={navigation} lang={lang} />
-            <main className="relative isolate min-h-screen px-6 pt-14 lg:px-8">
+            <main className="relative isolate min-h-screen pt-14">
               {children}
             </main>
             <Footer lang={lang} />

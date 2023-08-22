@@ -12,6 +12,17 @@
     "cta": "Empezar",
     "link": "Leer más"
   },
+  "newsletter": {
+    "heading": "Suscríbete a nuestro newsletter.",
+    "description": "Mantente al día sobre nuestros lanzamientos más recientes y mucho más.",
+    "email_address": "Dirección de correo electrónico",
+    "email_placeholder": "Ingresa tu correo",
+    "subscribe": "Suscríbete",
+    "weekly_articles": "Artículos semanales",
+    "weekly_articles_description": "Publicamos semanalmente artículos relacionados con las tecnologías e implementación de esta herramienta.",
+    "no_spam": "Sin spam",
+    "no_spam_description": "Respectamos tu privacidad. No compartiremos tus datos personal con nadie más ni te enviaremos correos que no tengan relación con el producto"
+  },
   "navigation": {
     "home": "Inicio",
     "assistants": "Asistentes",
