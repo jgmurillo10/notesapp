@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { Locale } from '../../../../i18n-config';
 import { getDictionary } from '../../../../get-dictionary';
+import {
+  CalendarIcon,
+  ChatBubbleBottomCenterTextIcon,
+} from '@heroicons/react/24/outline';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 async function getAssistants() {
   const response = await fetch(
@@ -37,13 +42,13 @@ export default async function NotesPage({
         />
       </div>
       <h1 className="my-2 text-4xl">{dictionary['assistants'].assistants}</h1>
-      <div className="flex flex-row flex-wrap">
+      <ul role="list" className="divide-y divide-gray-100 dark:divide-gray-800">
         {assistants?.map((assistant) => {
           return (
             <Assistant key={assistant.id} assistant={assistant} locale={lang} />
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }
@@ -54,13 +59,29 @@ function Assistant({ assistant, locale }: any) {
 
   return (
     <Link
+      role="listitem"
+      key={id}
       href={`/${locale}/assistants/${id}`}
       locale={false}
-      className="basis-full rounded shadow shadow-slate-300 hover:shadow-slate-400 transition-all dark:shadow-gray-900 hover:dark:shadow-gray-700 dark:bg-gray-800 p-6 mt-4 relative"
+      className="flex justify-between gap-x-6 p-5 rounded-md hover:bg-slate-200 dark:hover:bg-slate-600 items-center"
     >
-      <h2 className="text-xl">{name}</h2>
-      <div className="my-2">{description}</div>
-      <p className="text-xs absolute bottom-2">{createdDate.toDateString()}</p>
+      <div className="flex min-w-0 gap-x-4">
+        <ChatBubbleBottomCenterTextIcon className="h-12 w-12 flex-none rounded-full bg-gray-100 dark:text-black p-2" />
+        <div className="min-w-0 flex-auto">
+          <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+            {name}
+          </p>
+          <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-white">
+            {description}
+          </p>
+        </div>
+      </div>
+      <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+        <p className="flex items-center text-xs leading-5 text-gray-500 dark:text-white">
+          <CalendarIcon className="h-6 w-6 mr-2" />
+          <time dateTime={created}>{createdDate.toDateString()}</time>
+        </p>
+      </div>
     </Link>
   );
 }

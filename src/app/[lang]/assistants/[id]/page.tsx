@@ -1,6 +1,10 @@
 import PocketBase from 'pocketbase';
 import { Chat } from './chat';
-import Link from 'next/link';
+import {
+  BriefcaseIcon,
+  CalendarIcon,
+  LinkIcon,
+} from '@heroicons/react/20/solid';
 import { getDictionary } from '../../../../../get-dictionary';
 
 async function getAssistant(assistantId: string) {
@@ -15,7 +19,7 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <div>
+    <>
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -28,18 +32,45 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
           }}
         />
       </div>
-      <h1 className="my-2 text-4xl truncate">
-        <Link href={`/${lang}/assistants`} locale={false}>
-          {dictionary['assistants'].assistants}
-        </Link>
-        /{assistant.id}
-      </h1>
-      <div className="my-2">
-        <h3>🤖: {assistant.name}</h3>
-        <p>💬: {assistant.description}</p>
-        <p>🗓️: {new Date(assistant.created).toDateString()}</p>
+      <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <h2 className="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
+            {assistant.name}
+          </h2>
+          <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+            <div className="mt-2 flex items-center text-sm text-gray-500 dark:text-white">
+              <BriefcaseIcon
+                className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                aria-hidden="true"
+              />
+              Writer
+            </div>
+            <div className="mt-2 flex items-center text-sm text-gray-500 dark:text-white">
+              <CalendarIcon
+                className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                aria-hidden="true"
+              />
+              {new Date(assistant.created).toDateString()}
+            </div>
+          </div>
+        </div>
+        <div className="mt-5 flex md:mt-0">
+          <span className="md:ml-3">
+            <button
+              type="button"
+              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            >
+              <LinkIcon
+                className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+              Share
+            </button>
+          </span>
+        </div>
       </div>
+      <p className="mt-4">{assistant.description}</p>
       <Chat role={assistant.gpt_id} />
-    </div>
+    </>
   );
 }
