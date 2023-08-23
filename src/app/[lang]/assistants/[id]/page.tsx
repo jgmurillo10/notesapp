@@ -43,7 +43,7 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
                 className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
                 aria-hidden="true"
               />
-              Writer
+              {dictionary['assistant'].writer}
             </div>
             <div className="mt-2 flex items-center text-sm text-gray-500 dark:text-white">
               <CalendarIcon
@@ -64,7 +64,7 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
                 className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
                 aria-hidden="true"
               />
-              Share
+              {dictionary['assistant'].share}
             </button>
           </span>
         </div>

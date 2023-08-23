@@ -34,5 +34,32 @@
   },
   "auth": {
     "signInWithGoogle": "Inicia sesión con Google"
+  },
+  "featured": {
+    "eyebrow": "Escribe más rápido, escribe mejor",
+    "heading": "Todo lo que necesitas para mejorar tu productividad",
+    "description": "Encuentra asistentes impulsados por AI que te ayudarán en tus tareas de escritura.",
+    "features": [
+      {
+        "name": "Crea uno",
+        "description": "Podrás crear y entrenar tu propio asistente."
+      },
+      {
+        "name": "Seguro",
+        "description": "Almacenamos tus conversaciones encriptadas. La privacidad en su esplendor."
+      },
+      {
+        "name": "Código abierto",
+        "description": "Somos tan transparentes que todo el código es abierto."
+      },
+      {
+        "name": "Paga por uso",
+        "description": "No hay dolorosas suscripciones de pagos anuales."
+      }
+    ]
+  },
+  "assistant": {
+    "share": "Compartir",
+    "writer": "Escritor"
   }
 }

@@ -34,5 +34,32 @@
   },
   "auth": {
     "signInWithGoogle": "Sign in with Google"
+  },
+  "featured": {
+    "eyebrow": "Write faster, write better",
+    "heading": "Everything you need to improve your productivity",
+    "description": "Find AI-powered assistants to help you with your writing tasks.",
+    "features": [
+      {
+        "name": "Create your own",
+        "description": "You will be able to create and fine-tune your own assistant."
+      },
+      {
+        "name": "Secure",
+        "description": "We store your conversations encrypted. Privacy at its best."
+      },
+      {
+        "name": "Open source",
+        "description": "We are transparent enough to share everything wiht you."
+      },
+      {
+        "name": "Pay-per-use",
+        "description": "No painful subscriptions, nor one-lifetime payment."
+      }
+    ]
+  },
+  "assistant": {
+    "share": "Share",
+    "writer": "Writer"
   }
 }
