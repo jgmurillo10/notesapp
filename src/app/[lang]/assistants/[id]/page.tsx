@@ -6,6 +6,7 @@ import {
   LinkIcon,
 } from '@heroicons/react/20/solid';
 import { getDictionary } from '../../../../../get-dictionary';
+import { Clipboard } from './Clipboard';
 
 async function getAssistant(assistantId: string) {
   const db = new PocketBase(process.env.NEXT_PUBLIC_POCKET_BASE_PROD);
@@ -56,16 +57,13 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
         </div>
         <div className="mt-5 flex md:mt-0">
           <span className="md:ml-3">
-            <button
-              type="button"
-              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            >
+            <Clipboard>
               <LinkIcon
                 className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
                 aria-hidden="true"
               />
               {dictionary['assistant'].share}
-            </button>
+            </Clipboard>
           </span>
         </div>
       </div>
