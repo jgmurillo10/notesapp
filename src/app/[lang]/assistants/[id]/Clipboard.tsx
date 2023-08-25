@@ -2,9 +2,9 @@
 import React from 'react';
 
 export const Clipboard = ({ children }: { children: React.ReactNode }) => {
-  const handleCopyToClipboard = () => {
+  const handleCopyToClipboard = async () => {
     const currentUrl = window.location.href;
-    navigator.clipboard.writeText(currentUrl);
+    await navigator.clipboard.writeText(currentUrl);
     alert(`Copied '${currentUrl}' to clipboard!`);
   };
 
