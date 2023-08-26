@@ -12,7 +12,7 @@ export const Breadcrumb = () => {
   const [_, lang, assistants, assistant] = pathname.split('/');
 
   return (
-    <div className="flex items-center my-5 gap-x-4 text-slate-600 dark:text-white">
+    <div className="max-w-7xl mx-auto flex items-center my-5 gap-x-4 text-slate-600 dark:text-white">
       <Link
         className="border-b-2 border-transparent hover:border-slate-400 duration-300"
         href={`/${lang}`}

@@ -34,7 +34,7 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
           }}
         />
       </div>
-      <div className="sm:flex sm:items-center sm:justify-between">
+      <div className="max-w-7xl mx-auto sm:flex sm:items-center sm:justify-between">
         <div className="min-w-0 flex-1">
           <h2 className="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
             {assistant.name}
@@ -68,7 +68,7 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
           </span>
         </div>
       </div>
-      <p className="mt-4">{assistant.description}</p>
+      <p className="max-w-7xl mx-auto mt-4">{assistant.description}</p>
       <Chat role={assistant.gpt_id} />
       <Newsletter lang={lang} />
     </>

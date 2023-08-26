@@ -28,7 +28,7 @@ export default async function NotesPage({
   const dictionary = await getDictionary(lang);
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
