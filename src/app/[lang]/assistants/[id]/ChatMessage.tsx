@@ -2,8 +2,12 @@ import type { Message } from 'ai/react';
 import { AcademicCapIcon, UserIcon } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import './ChatMessage.css';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 export const ChatMessage = ({ message }: { message: Message }) => {
+  const { data } = useSession();
+  console.log('>>>', { data });
   if (message.role === 'user') {
     return (
       <div key={message.id} className="py-4 chat-message">
@@ -15,7 +19,17 @@ export const ChatMessage = ({ message }: { message: Message }) => {
               </span>
             </div>
           </div>
-          <UserIcon className="w-6 h-6 rounded-full order-1 bg-slate-300 dark:bg-white text-black p-1" />
+          {data?.user?.image ? (
+            <Image
+              className="w-6 h-6 rounded-full order-1 bg-slate-300 dark:bg-white text-black"
+              alt="user"
+              src={data.user.image}
+              width={24}
+              height={24}
+            />
+          ) : (
+            <UserIcon className="w-6 h-6 rounded-full order-1 bg-slate-300 dark:bg-white text-black p-1" />
+          )}
         </div>
       </div>
     );
