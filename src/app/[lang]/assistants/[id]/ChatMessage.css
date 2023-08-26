@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .chat-message h1 {
+    @apply my-8 text-2xl;
+  }
+
+  .chat-message h2 {
+    @apply my-4 text-xl;
+  }
+
+  .chat-message h3 {
+    @apply my-4 text-lg;
+  }
+
+  .chat-message ul {
+    @apply mb-2 list-disc;
+  }
+  .chat-message li {
+    @apply ml-2;
+  }
+  .chat-message li,
+  .chat-message p {
+    @apply mt-2 text-base;
+  }
+
+  .chat-message strong {
+    @apply font-extrabold text-lime-600;
+  }
+}

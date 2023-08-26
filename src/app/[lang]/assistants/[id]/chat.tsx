@@ -25,7 +25,7 @@ export const Chat = ({ role }: { role: string }) => {
 
   return (
     <div>
-      <div className="mx-auto w-full max-w-md py-24 flex flex-col stretch">
+      <div className="mx-auto w-full max-w-lg py-24 flex flex-col stretch">
         {messages.map((message) => (
           <ChatMessage key={message.id} message={message} />
         ))}
@@ -36,7 +36,7 @@ export const Chat = ({ role }: { role: string }) => {
           <label className="flex-1">
             <input
               placeholder="Your message here!"
-              className="w-full max-w-md bottom-0 border border-gray-300 border-2 focus:ring-4 focus:ring-blue-300 rounded-l text-black"
+              className="w-full max-w-lg bottom-0 border border-gray-300 border-2 focus:ring-4 focus:ring-blue-300 rounded-l text-black"
               value={input}
               onChange={handleInputChange}
             />
