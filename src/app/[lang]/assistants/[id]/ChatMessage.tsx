@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export const ChatMessage = ({ message }: { message: Message }) => {
   const { data } = useSession();
-  console.log('>>>', { data });
+
   if (message.role === 'user') {
     return (
       <div key={message.id} className="py-4 chat-message">
