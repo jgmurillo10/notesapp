@@ -20,8 +20,8 @@
     "subscribe": "Suscríbete",
     "weekly_articles": "Artículos semanales",
     "weekly_articles_description": "Publicamos semanalmente artículos relacionados con las tecnologías e implementación de esta herramienta.",
-    "no_spam": "Sin spam",
-    "no_spam_description": "Respectamos tu privacidad. No compartiremos tus datos personal con nadie más ni te enviaremos correos que no tengan relación con el producto"
+    "full_access": "Acceso premium",
+    "full_access_description": "Obtén acceso a la versión alfa y los lanzamientos más recientes."
   },
   "navigation": {
     "home": "Inicio",

@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, LockOpenIcon } from '@heroicons/react/24/outline';
 import { getDictionary } from '../../../get-dictionary';
 import { Locale } from '../../../i18n-config';
 import { SubscribeForm } from './SubscribeForm';
@@ -40,16 +40,16 @@ export const Newsletter = async ({ lang }: { lang: Locale }) => {
             </div>
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-black dark:ring-white/10">
-                <HandRaisedIcon
+                <LockOpenIcon
                   className="h-6 w-6 text-black dark:text-white"
                   aria-hidden="true"
                 />
               </div>
               <dt className="mt-4 font-semibold text-black dark:text-white">
-                {dictionary['newsletter'].no_spam}
+                {dictionary['newsletter'].full_access}
               </dt>
               <dd className="mt-2 leading-7 text-gray-900 dark:text-gray-400">
-                {dictionary['newsletter'].no_spam_description}
+                {dictionary['newsletter'].full_access_description}
               </dd>
             </div>
           </dl>

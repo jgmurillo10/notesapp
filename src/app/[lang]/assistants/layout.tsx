@@ -7,7 +7,7 @@ export default function AssistantsLayout({
   params: any;
 }) {
   return (
-    <div className="p-5">
+    <div className="px-5 pt-5">
       <Breadcrumb />
       {children}
     </div>
