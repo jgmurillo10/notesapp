@@ -56,16 +56,14 @@ export default async function AssistantPage({ params: { id, lang } }: any) {
             </div>
           </div>
         </div>
-        <div className="mt-5 flex md:mt-0">
-          <span className="md:ml-3">
-            <Clipboard>
-              <LinkIcon
-                className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
-                aria-hidden="true"
-              />
-              {dictionary['assistant'].share}
-            </Clipboard>
-          </span>
+        <div className="flex justify-end mb-3">
+          <Clipboard>
+            <LinkIcon
+              className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
+              aria-hidden="true"
+            />
+            {dictionary['assistant'].share}
+          </Clipboard>
         </div>
       </div>
       <p className="max-w-7xl mx-auto mt-4">{assistant.description}</p>
