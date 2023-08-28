@@ -10,7 +10,7 @@ export const ChatMessage = ({ message }: { message: Message }) => {
 
   if (message.role === 'user') {
     return (
-      <div key={message.id} className="py-4 chat-message">
+      <div key={message.id} className="p-4 chat-message">
         <div className="flex items-end justify-end">
           <div className="flex flex-col space-y-2 text-xs max-w-md mx-2 order-1 items-end">
             <div>
@@ -35,7 +35,7 @@ export const ChatMessage = ({ message }: { message: Message }) => {
     );
   } else if (message.role === 'assistant') {
     return (
-      <div key={message.id} className="py-4">
+      <div key={message.id} className="p-4">
         <div className="flex items-end">
           <div className="flex flex-col space-y-2 text-xs max-w-md mx-2 order-2 items-start">
             <div>
