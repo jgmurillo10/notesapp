@@ -5,7 +5,7 @@ import {
   CalendarIcon,
   ChatBubbleBottomCenterTextIcon,
 } from '@heroicons/react/24/outline';
-import { Breadcrumb } from '@/components/breadcrumb';
+import { Breadcrumb } from '@/components/breadcrumb/breadcrumb';
 
 async function getAssistants() {
   const response = await fetch(

@@ -1,4 +1,4 @@
-import { Breadcrumb } from '@/components/breadcrumb';
+import { Breadcrumb } from '@/components/breadcrumb/breadcrumb';
 
 export default function AssistantsLayout({
   children,
