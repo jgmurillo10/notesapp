@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/20/solid';
 import { getDictionary } from '../../../../../get-dictionary';
 import { Clipboard } from './Clipboard';
-import { Newsletter } from '@/components/newsletter';
+import { Newsletter } from '@/components/newsletter/newsletter';
 
 async function getAssistant(assistantId: string) {
   const db = new PocketBase(process.env.NEXT_PUBLIC_POCKET_BASE_PROD);
