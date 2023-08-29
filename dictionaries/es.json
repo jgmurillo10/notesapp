@@ -26,6 +26,7 @@
   "navigation": {
     "home": "Inicio",
     "assistants": "Asistentes",
+    "assistant": "Asistente",
     "login": "Iniciar sesión",
     "logout": "Cerrar sesión"
   },

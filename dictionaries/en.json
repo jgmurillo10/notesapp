@@ -26,6 +26,7 @@
   "navigation": {
     "home": "Home",
     "assistants": "Assistants",
+    "assistant": "Assistant",
     "login": "Login",
     "logout": "Logout"
   },
