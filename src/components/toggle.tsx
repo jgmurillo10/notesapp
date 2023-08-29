@@ -20,19 +20,26 @@ export const ThemeSwitcher = () => {
   }
 
   return (
-    <div className="rounded-full flex border border-slate-200 p-1">
+    <div
+      className="rounded-full flex border border-slate-200 p-1"
+      role="switch"
+    >
       <MoonIcon
         className={`hover:cursor-pointer rounded-full p-1 mr-1 w-5 h-5 text-xl dark:text-black hover:scale-110 active:scale-100 duration-200 ${
           theme === 'dark' ? 'bg-slate-200' : ''
         }`}
         onClick={() => setTheme('dark')}
-      />
+      >
+        <span className="sr-only">Light mode</span>
+      </MoonIcon>
       <SunIcon
         className={`hover:cursor-pointer rounded-full p-[2px] w-5 h-5 text-xl hover:scale-110 active:scale-100 duration-200 ${
           theme === 'light' ? 'bg-slate-200' : ''
         }`}
         onClick={() => setTheme('light')}
-      />
+      >
+        <span className="sr-only">Dark mode</span>
+      </SunIcon>
     </div>
   );
 };

@@ -13,10 +13,11 @@ import {
 import { ChatMessage } from './ChatMessage';
 
 export const Chat = ({ role }: { role: string }) => {
+  const initialMessages = roles[role as keyof typeof roles]
+    ? [roles[role as keyof typeof roles] as Message]
+    : [];
   const { messages, input, handleInputChange, handleSubmit, setMessages } =
-    useChat({
-      initialMessages: [roles[role as keyof typeof roles] as Message],
-    });
+    useChat({ initialMessages });
   const { data: session, status } = useSession();
 
   if (status === 'loading') {

@@ -21,6 +21,7 @@ export const LocaleSwitcher = () => {
       <ul className="flex text-sm text-gray-500 sm:text-center dark:text-gray-400 uppercase mt-2">
         <li className="mr-2">
           <GlobeAltIcon className="h-4 w-4" />
+          <span className="sr-only">Languages</span>
         </li>
         {i18n.locales.map((locale) => {
           return (

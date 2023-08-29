@@ -1,7 +1,7 @@
-import { getDictionary } from '../../get-dictionary';
-import { Locale } from '../../i18n-config';
-import { LocaleSwitcher } from './locale-switcher';
-import { ThemeSwitcher } from './toggle';
+import { getDictionary } from '../../../get-dictionary';
+import { Locale } from '../../../i18n-config';
+import { LocaleSwitcher } from '../locale-switcher';
+import { ThemeSwitcher } from '../toggle';
 
 export const Footer = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);

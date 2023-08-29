@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { NavBar } from '@/components/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { Locale, i18n } from '../../../i18n-config';
-import { Footer } from '@/components/footer';
+import { Footer } from '@/components/footer/footer';
 import { NextAuthProvider, ThemeProvider } from '../providers';
 import { Header } from '@/components/header';
 

@@ -77,4 +77,9 @@ export const roles = {
       """
     `,
   },
+  default: {
+    id: 'default',
+    role: 'system',
+    content: '',
+  },
 };
