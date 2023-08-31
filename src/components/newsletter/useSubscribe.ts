@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import jsonp from 'jsonp';
 
-type SubscriptionStatus = 'INITIAL' | 'ERROR' | 'SUCCESS' | 'LOADING';
+export type SubscriptionStatus = 'INITIAL' | 'ERROR' | 'SUCCESS' | 'LOADING';
 export const useSubscribe = ({ url }: { url: string }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<SubscriptionStatus>('INITIAL');

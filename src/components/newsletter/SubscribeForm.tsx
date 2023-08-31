@@ -24,6 +24,7 @@ export const SubscribeForm = ({
   return (
     <>
       <form
+        role="form"
         onSubmit={(e) => handleSubscription(e, email)}
         className="mt-6 flex max-w-md gap-x-4"
       >
