@@ -40,5 +40,7 @@ next-env.d.ts
 /pb_migrations
 
 # markdown
-
 .md
+
+# actions
+/.github
