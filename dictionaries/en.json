@@ -62,5 +62,8 @@
   "assistant": {
     "share": "Share",
     "writer": "Writer"
+  },
+  "playground": {
+    "playground": "Playground"
   }
 }
