@@ -5,8 +5,6 @@ on:
   pull_request:
     branches: [main, master]
 
-env:
-  NEXT_PUBLIC_POCKET_BASE_PROD: ${{ secrets.NEXT_PUBLIC_POCKET_BASE_PROD }}
 jobs:
   test:
     timeout-minutes: 60
@@ -21,7 +19,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: NEXT_PUBLIC_POCKET_BASE_PROD=${{env.NEXT_PUBLIC_POCKET_BASE_PROD}} npx playwright test
+        run: NEXT_PUBLIC_POCKET_BASE_PROD=${{ secrets.NEXT_PUBLIC_POCKET_BASE_PROD }} npx playwright test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
