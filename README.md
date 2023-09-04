@@ -53,4 +53,10 @@ https://github.com/pocketbase/pocketbase/discussions/537
 
 ## Testing
 
-npm run test
+`npm run test`
+
+Requisits:
+
+- `npx playwright install`
+
+`npm run test:e2e`

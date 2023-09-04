@@ -37,3 +37,8 @@ next-env.d.ts
 
 # pocketbase
 /pb_data
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
