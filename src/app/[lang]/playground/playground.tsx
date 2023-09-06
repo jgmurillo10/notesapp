@@ -117,7 +117,7 @@ export const Playground = () => {
 
   return (
     <div className="flex">
-      <div className="border flex-2">
+      <div className="flex-2">
         <h3>System</h3>
         <textarea
           value={systemMessage}
@@ -126,7 +126,7 @@ export const Playground = () => {
           className="w-full max-w-lg bottom-0 border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-l text-black"
         />
       </div>
-      <div className="flex-1 border">
+      <div className="flex-1">
         <h3>Messages</h3>
         <form onSubmit={handleSubmit}>
           <ul>
@@ -150,7 +150,7 @@ export const Playground = () => {
           <input type="submit" />
         </form>
       </div>
-      <div className="flex-2 border">
+      <div className="flex-2">
         <h3>Setup</h3>
       </div>
     </div>
