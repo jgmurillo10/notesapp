@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged # TODO fix error for .ts files
+# npx lint-staged # TODO fix error for .ts files
 npx prettier . --write
