@@ -37,7 +37,7 @@ export const ChatMessage = ({ message }: { message: Message }) => {
     return (
       <div key={message.id} className="p-4">
         <div className="flex items-end">
-          <div className="flex flex-col space-y-2 text-xs max-w-xl mx-2 order-2 items-start">
+          <div className="flex flex-col space-y-2 text-xs mx-2 order-2 items-start">
             <div>
               <div className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-slate-200 dark:bg-white text-gray-600">
                 <ReactMarkdown className="chat-message">
