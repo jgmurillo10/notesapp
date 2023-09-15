@@ -6,9 +6,13 @@
 'use client';
 import { FormEvent, useState } from 'react';
 import type { Message } from 'ai/react';
+import { useSession } from 'next-auth/react';
 import { v4 as uuidv4 } from 'uuid';
-import { MinusCircleIcon } from '@heroicons/react/24/outline';
+
+import { LoginComponent } from '@/components/auth/auth';
 import { Editable } from '@/components/editable/editable';
+import { MinusCircleIcon } from '@heroicons/react/24/outline';
+import { Spinner } from '@/components/spinner';
 
 export type LocalMessage = Pick<Message, 'role' | 'content'> & { uuid: string };
 
@@ -24,6 +28,11 @@ export const Playground = () => {
   const [messages, setMessages] = useState<LocalMessage[]>([
     emptyMessageGenerator(),
   ]);
+  const { data: session, status } = useSession();
+
+  if (status === 'loading') {
+    return <Spinner />;
+  }
 
   const handleStreaming = async (response: Response) => {
     if (!response.ok || !response.body) {
@@ -125,19 +134,23 @@ export const Playground = () => {
     handleStreaming(response);
   };
 
+  if (!session) {
+    return <LoginComponent />;
+  }
+
   return (
-    <div className="flex gap-4 mt-8">
+    <div className="sm:flex gap-4 mt-8">
       <div className="flex-2">
-        <h3>System</h3>
+        <h3 className="text-xl font-bold">System</h3>
         <textarea
           value={systemMessage}
           onChange={(e) => setSystemMessage(e.target.value)}
           placeholder="You are a helpful assistant"
-          className="w-full mt-8 max-w-lg bottom-0 border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-l text-black h-96"
+          className="w-full mt-8 max-w-xl bottom-0 border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-l text-black h-32 sm:h-96"
         />
       </div>
       <div className="flex-1">
-        <h3>Messages</h3>
+        <h3 className="text-xl font-bold">Messages</h3>
         <form onSubmit={handleSubmit}>
           <ul>
             {messages.map((message) => (
