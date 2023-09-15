@@ -22,8 +22,10 @@ export const Editable = ({
   };
 
   const handleKeyUp = () => {
-    inputRef.current.style.height = '1px';
-    inputRef.current.style.height = inputRef.current.scrollHeight + 'px';
+    if (inputRef.current) {
+      inputRef.current.style.height = '1px';
+      inputRef.current.style.height = inputRef.current.scrollHeight + 'px';
+    }
   };
 
   return (
