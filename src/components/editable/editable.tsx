@@ -10,7 +10,7 @@ export const Editable = ({
   handleOnChange: (e: React.SyntheticEvent, id: string) => void;
 }) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
-  const inputRef = useRef<HTMLTextAreaElement>();
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const placeholder = `Enter an ${message.role} message here.`;
 
   const handleEditMode = () => {
