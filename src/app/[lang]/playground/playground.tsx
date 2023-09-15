@@ -1,8 +1,7 @@
 /**
- * Variables
+ * TODO: Add setuo panel with:
  * - model
  * - temperature
- * - predefined system messages
  */
 'use client';
 import { FormEvent, useState } from 'react';
