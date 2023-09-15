@@ -18,7 +18,7 @@ test('should navigate to the Home page and redirect to english locale', async ({
   );
 });
 
-test('should have Home, Assistatns and Playground in the menu', async ({
+test('should have Home, Assistants and the Playground pages in the menu', async ({
   page,
 }) => {
   await page.goto('/');
@@ -28,7 +28,7 @@ test('should have Home, Assistatns and Playground in the menu', async ({
   await expect(page.locator('nav')).toContainText('Playground');
 });
 
-test('should navigate to the Playhround page', async ({ page }) => {
+test('should navigate to the Playground page', async ({ page }) => {
   await page.goto('/');
   await page.click('text=Playground');
   await expect(page).toHaveURL('/en/playground');
