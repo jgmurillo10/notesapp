@@ -15,9 +15,9 @@ export default async function AssistantsPage({
       <div className="border-b border-slate-300 dark:border-gray-200 py-8">
         <div className="max-w-7xl mx-auto sm:flex sm:items-center sm:justify-between">
           <div className="min-w-0 flex-1">
-            <h2 className="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
+            <h1 className="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
               {dictionary['playground'].playground}
-            </h2>
+            </h1>
           </div>
           <div className="flex justify-end mb-3">
             <Clipboard>

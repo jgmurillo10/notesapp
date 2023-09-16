@@ -32,5 +32,5 @@ test('should navigate to the Playground page', async ({ page }) => {
   await page.goto('/');
   await page.click('text=Playground');
   await expect(page).toHaveURL('/en/playground');
-  await expect(page.locator('h2')).toContainText('Playground');
+  await expect(page.locator('h1')).toContainText('Playground');
 });
