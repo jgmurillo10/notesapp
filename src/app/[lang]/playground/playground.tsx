@@ -4,82 +4,42 @@
  * - temperature
  */
 'use client';
-import { FormEvent, useState } from 'react';
 import type { Message } from 'ai/react';
 import { useSession } from 'next-auth/react';
-import { v4 as uuidv4 } from 'uuid';
 
 import { LoginComponent } from '@/components/auth/auth';
 import { Editable } from '@/components/editable/editable';
 import { MinusCircleIcon } from '@heroicons/react/24/outline';
 import { Spinner } from '@/components/spinner';
+import {
+  emptyMessageGenerator,
+  useChatCompletion,
+} from '@/hooks/useChatCompletion';
 
 export type LocalMessage = Pick<Message, 'role' | 'content'> & { uuid: string };
 
-const emptyMessageGenerator = (): LocalMessage => ({
-  uuid: uuidv4(),
-  role: 'user',
-  content: '',
-});
-
 export const Playground = () => {
-  const [systemMessage, setSystemMessage] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [messages, setMessages] = useState<LocalMessage[]>([
-    emptyMessageGenerator(),
-  ]);
   const { data: session, status } = useSession();
+  const {
+    isLoading,
+    setMessages,
+    messages,
+    handleInputSystem,
+    inputSystem,
+    handleSubmit,
+  } = useChatCompletion();
 
   if (status === 'loading') {
     return <Spinner />;
   }
 
-  const handleStreaming = async (response: Response) => {
-    if (!response.ok || !response.body) {
-      throw response.statusText;
-    }
-
-    const newId = uuidv4();
-    setMessages((newMessages) => [
-      ...newMessages,
-      {
-        uuid: newId,
-        role: 'assistant',
-        content: '',
-      },
-    ]);
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) {
-        setIsLoading(false);
-        break;
-      }
-
-      const decodedChunk = decoder.decode(value, { stream: true });
-      setMessages((newMessages) =>
-        [...newMessages].map((message) =>
-          message.uuid === newId
-            ? {
-                ...message,
-                content: `${message.content}${decodedChunk}`,
-              }
-            : message,
-        ),
-      );
-    }
-  };
-
   const handleAddMessage = () => {
-    setMessages((messages) => [...messages, emptyMessageGenerator()]);
+    setMessages((prevMessages) => [...prevMessages, emptyMessageGenerator()]);
   };
 
   const handleOnChange = (e: React.SyntheticEvent, id: string) => {
-    setMessages((newMessages) =>
-      newMessages.map((message) =>
+    setMessages((prevMessages) =>
+      prevMessages.map((message) =>
         message.uuid !== id
           ? message
           : {
@@ -111,45 +71,22 @@ export const Playground = () => {
     );
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    const system: LocalMessage = {
-      uuid: uuidv4(),
-      role: 'system' as Message['role'],
-      content: systemMessage,
-    };
-
-    const submitMessages: LocalMessage[] = [system, ...messages];
-
-    setIsLoading(true);
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      body: JSON.stringify({
-        messages: submitMessages.map((message) => ({
-          role: message.role,
-          content: message.content,
-        })),
-      }),
-    });
-    handleStreaming(response);
-  };
-
   if (!session) {
     return <LoginComponent />;
   }
 
   return (
-    <div className="sm:flex gap-4 mt-8">
+    <div className="sm:flex gap-4 mt-8 max-w-7xl mx-auto">
       <div className="flex-2">
         <h3 className="text-xl font-bold">System</h3>
         <textarea
-          value={systemMessage}
-          onChange={(e) => setSystemMessage(e.target.value)}
+          value={inputSystem}
+          onChange={handleInputSystem}
           placeholder="You are a helpful assistant"
           className="w-full mt-8 max-w-xl bottom-0 border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-l text-black h-32 sm:h-96"
         />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 mt-8 sm:mt-0">
         <h3 className="text-xl font-bold">Messages</h3>
         <form onSubmit={handleSubmit}>
           <ul>
