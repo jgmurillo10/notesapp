@@ -22,6 +22,7 @@ export async function generateStaticParams() {
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Assistants', href: '/assistants' },
+  { name: 'Playground', href: '/playground' },
 ];
 
 export default function RootLayout({

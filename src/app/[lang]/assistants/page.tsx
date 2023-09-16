@@ -19,7 +19,7 @@ async function getAssistants() {
   return data?.items as any[];
 }
 
-export default async function NotesPage({
+export default async function AssistantsPage({
   params: { lang },
 }: {
   params: { lang: Locale };
