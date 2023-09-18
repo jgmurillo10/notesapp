@@ -18,6 +18,8 @@ import {
 
 export type LocalMessage = Pick<Message, 'role' | 'content'> & { uuid: string };
 
+const roles: Message['role'][] = ['assistant', 'function', 'system', 'user'];
+
 export const Playground = () => {
   const { data: session, status } = useSession();
   const {
@@ -63,9 +65,10 @@ export const Playground = () => {
           ? message
           : {
               ...message,
-              role: (message.role === 'user'
-                ? 'assistant'
-                : 'user') as Message['role'],
+              role: roles[
+                (roles.findIndex((role) => role === message.role) + 1) %
+                  roles.length
+              ],
             },
       ),
     );
