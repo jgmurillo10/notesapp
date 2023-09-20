@@ -1,7 +1,7 @@
 import type { Message } from 'ai/react';
 import { AcademicCapIcon, UserIcon } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
-import './ChatMessage.css';
+import './../../../../components/parser/parser.css';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 

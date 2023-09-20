@@ -29,4 +29,13 @@
   .chat-message strong {
     @apply font-extrabold text-lime-600;
   }
+
+  .chat-message pre {
+    @apply p-2;
+  }
+
+  .chat-message code,
+  .chat-message pre {
+    @apply bg-slate-100;
+  }
 }

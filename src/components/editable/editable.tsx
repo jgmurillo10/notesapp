@@ -1,6 +1,8 @@
 'use client';
 import { LocalMessage } from '@/app/[lang]/playground/playground';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import '../parser/parser.css';
 
 export const Editable = ({
   message,
@@ -46,7 +48,13 @@ export const Editable = ({
           isEditable ? 'hidden' : ''
         }`}
       >
-        {message.content ? message.content : placeholder}
+        {message.content ? (
+          <ReactMarkdown className="chat-message">
+            {message.content}
+          </ReactMarkdown>
+        ) : (
+          placeholder
+        )}
       </div>
     </>
   );
