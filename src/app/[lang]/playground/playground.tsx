@@ -125,7 +125,7 @@ export const Playground = () => {
           </button>
           <input
             disabled={isLoading}
-            className="my-24 flex items-center justify-center text-white bg-blue-700 w-32 text-center hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-900 focus:outline-none dark:focus:ring-blue-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            className="my-24 ml-auto flex items-center justify-center text-white bg-blue-700 w-32 text-center hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-900 focus:outline-none dark:focus:ring-blue-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
             type="submit"
             value={isLoading ? 'Loading' : 'Send'}
           />
