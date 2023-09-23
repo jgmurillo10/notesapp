@@ -18,7 +18,7 @@ export const Clipboard = ({ children }: { children: React.ReactNode }) => {
     >
       {isCopied ? (
         <div className="flex items-center">
-          <CheckCircleIcon className="h-6 w-6 mr-2 text-green-400" />
+          <CheckCircleIcon className="h-4 w-4 mr-2 text-green-400" />
           Copied
         </div>
       ) : (
