@@ -1,5 +1,5 @@
 /**
- * TODO: Add setuo panel with:
+ * TODO: Add setup panel with:
  * - model
  * - temperature
  */

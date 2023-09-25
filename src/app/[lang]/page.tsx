@@ -12,7 +12,6 @@ export default async function Home({
     <>
       <Hero lang={lang} />
       <Featured lang={lang} />
-      {/* TODO: Implement with Mailchimp */}
       <Newsletter lang={lang} />
     </>
   );
