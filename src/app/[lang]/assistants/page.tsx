@@ -41,8 +41,14 @@ export default async function AssistantsPage({
           }}
         />
       </div>
-      <h1 className="my-2 text-4xl">{dictionary['assistants'].assistants}</h1>
-      <ul role="list" className="divide-y divide-gray-100 dark:divide-gray-800">
+      <h1 className="my-4 text-4xl">{dictionary['assistants'].assistants}</h1>
+      <Link 
+        href={`/${lang}/assistants/new`}
+        className="my-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+        {dictionary['assistants'].new}
+      </Link>
+      <ul role="list" className="mt-8 divide-y divide-gray-100 dark:divide-gray-800">
         {assistants?.map((assistant) => {
           return (
             <Assistant key={assistant.id} assistant={assistant} locale={lang} />

@@ -20,7 +20,12 @@ export type LocalMessage = Pick<Message, 'role' | 'content'> & { uuid: string };
 
 const roles: Message['role'][] = ['assistant', 'function', 'system', 'user'];
 
-export const Playground = () => {
+type AllProps = {
+  onSave: (assistant: string) => void;
+  creationMode: boolean;
+};
+
+export const Playground = ({ onSave, creationMode = false }: AllProps) => {
   const { data: session, status } = useSession();
   const {
     isLoading,
@@ -127,9 +132,10 @@ export const Playground = () => {
             disabled={isLoading}
             className="my-24 ml-auto flex items-center justify-center text-white bg-blue-700 w-32 text-center hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-900 focus:outline-none dark:focus:ring-blue-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
             type="submit"
-            value={isLoading ? 'Loading' : 'Send'}
+            value={isLoading ? 'Loading' : 'Test'}
           />
         </form>
+        {creationMode && <button onClick={() => onSave(inputSystem)} className="mb-16 block ml-auto bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>}
       </div>
     </div>
   );

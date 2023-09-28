@@ -1,6 +1,7 @@
 {
   "assistants": {
-    "assistants": "Asistentes"
+    "assistants": "Asistentes",
+    "new": "Crear asistente"
   },
   "home": {
     "hello": "Hola",
