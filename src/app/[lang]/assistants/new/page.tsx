@@ -4,6 +4,7 @@ import { Playground } from '../../playground/playground';
 
 export default function CreateAssistant() {
   const handleSave = (assistant: string) => {
+    //TODO Implement POST assistatnt
     console.log('>>>', { assistant });
   };
   return (
