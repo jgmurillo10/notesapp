@@ -135,7 +135,7 @@ export const Playground = ({ onSave, creationMode = false }: AllProps) => {
             value={isLoading ? 'Loading' : 'Test'}
           />
         </form>
-        {creationMode && (
+        {creationMode && onSave && (
           <button
             onClick={() => onSave(inputSystem)}
             className="mb-16 block ml-auto bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
