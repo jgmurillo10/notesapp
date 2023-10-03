@@ -6,6 +6,15 @@ import {
   ChatBubbleBottomCenterTextIcon,
 } from '@heroicons/react/24/outline';
 import { Breadcrumb } from '@/components/breadcrumb/breadcrumb';
+import { getClient } from 'configcat-node';
+
+async function getAssistantCreationFeatureFlag() {
+  const configcat = getClient(process.env.NEXT_PUBLIC_CONFIGCAT_SDK_KEY!)
+  return await configcat.getValueAsync(
+    'createAssistant',
+    false,
+  );
+}
 
 async function getAssistants() {
   const response = await fetch(
@@ -26,6 +35,7 @@ export default async function AssistantsPage({
 }) {
   const assistants = await getAssistants();
   const dictionary = await getDictionary(lang);
+  const shouldEnableAssistantCreation = await getAssistantCreationFeatureFlag();
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -42,12 +52,12 @@ export default async function AssistantsPage({
         />
       </div>
       <h1 className="my-4 text-4xl">{dictionary['assistants'].assistants}</h1>
-      {/* <Link
+      { shouldEnableAssistantCreation && <Link
         href={`/${lang}/assistants/new`}
         className="my-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         {dictionary['assistants'].new}
-      </Link> */}
+      </Link> }
       <ul
         role="list"
         className="mt-8 divide-y divide-gray-100 dark:divide-gray-800"

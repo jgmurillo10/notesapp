@@ -21,8 +21,8 @@ export type LocalMessage = Pick<Message, 'role' | 'content'> & { uuid: string };
 const roles: Message['role'][] = ['assistant', 'function', 'system', 'user'];
 
 type AllProps = {
-  onSave: (assistant: string) => void;
-  creationMode: boolean;
+  onSave?: (assistant: string) => void;
+  creationMode?: boolean;
 };
 
 export const Playground = ({ onSave, creationMode = false }: AllProps) => {
