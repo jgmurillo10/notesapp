@@ -29,7 +29,8 @@
     "assistants": "Assistants",
     "assistant": "Assistant",
     "login": "Login",
-    "logout": "Logout"
+    "logout": "Logout",
+    "new": "New"
   },
   "footer": {
     "made": "Made in Colombia 🇨🇴"

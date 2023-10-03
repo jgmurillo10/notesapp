@@ -4,10 +4,18 @@ import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 
-/**
- * TODO: I18n Breadcrumb.
- */
-export const Breadcrumb = () => {
+type AllProps = {
+  labels: {
+    home: string;
+    assistants: string;
+    assistant: string;
+    login: string;
+    logout: string;
+    new: string;
+  };
+};
+
+export const Breadcrumb = ({ labels }: AllProps) => {
   const pathname = usePathname();
   const [_, lang, assistants, assistant] = pathname.split('/');
 
@@ -17,25 +25,27 @@ export const Breadcrumb = () => {
         className="border-b-2 border-transparent hover:border-slate-400 duration-300"
         href={`/${lang}`}
       >
-        Home
+        {labels.home}
       </Link>
       <ChevronRightIcon className="h-4 w-4" />
       <Link
         className="border-b-2 border-transparent hover:border-slate-400 duration-300"
         href={`/${lang}/${assistants}`}
       >
-        Assistants
+        {labels.assistants}
       </Link>
       {assistant && assistant !== 'new' && (
         <>
           <ChevronRightIcon className="h-4 w-4" />
-          <div className="border-b-2 border-transparent">Assistant</div>
+          <div className="border-b-2 border-transparent">
+            {labels.assistant}
+          </div>
         </>
       )}
       {assistant === 'new' && (
         <>
           <ChevronRightIcon className="h-4 w-4" />
-          <div className="border-b-2 border-transparent">New</div>
+          <div className="border-b-2 border-transparent">{labels.new}</div>
         </>
       )}
     </div>

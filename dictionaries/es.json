@@ -29,7 +29,8 @@
     "assistants": "Asistentes",
     "assistant": "Asistente",
     "login": "Iniciar sesión",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "new": "Nuevo"
   },
   "footer": {
     "made": "Hecho en Colombia 🇨🇴"
