@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-
+// TODO Mock Feature flags and DB instead of using staging envs
 test('should navigate to the Assistants page', async ({ page }) => {
   await page.goto('/');
   await page.click('text=Assistants');
