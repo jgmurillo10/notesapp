@@ -26,7 +26,7 @@ export const Breadcrumb = () => {
       >
         Assistants
       </Link>
-      {assistant !== 'new' && (
+      {assistant && assistant !== 'new' && (
         <>
           <ChevronRightIcon className="h-4 w-4" />
           <div className="border-b-2 border-transparent">Assistant</div>
