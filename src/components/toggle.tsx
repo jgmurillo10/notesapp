@@ -23,6 +23,7 @@ export const ThemeSwitcher = () => {
     <div
       className="rounded-full flex border border-slate-200 p-1"
       role="switch"
+      aria-checked={theme === 'light'}
     >
       <MoonIcon
         className={`hover:cursor-pointer rounded-full p-1 mr-1 w-5 h-5 text-xl dark:text-black hover:scale-110 active:scale-100 duration-200 ${
