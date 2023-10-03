@@ -24,7 +24,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: NEXT_PUBLIC_POCKET_BASE_PROD=${{ secrets.NEXT_PUBLIC_POCKET_BASE_PROD }} npx playwright test
+        run: NEXT_PUBLIC_POCKET_BASE_PROD=${{ secrets.NEXT_PUBLIC_POCKET_BASE_PROD }} NEXT_PUBLIC_CONFIGCAT_SDK_KEY=${{ secrets.NEXT_PUBLIC_CONFIGCAT_SDK_KEY}} npx playwright test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
