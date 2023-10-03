@@ -7,7 +7,7 @@ import {
   ChatBubbleBottomCenterIcon,
 } from '@heroicons/react/24/outline';
 import { Dialog } from '@headlessui/react';
-import { Locale } from '../../i18n-config';
+import { Locale } from '../../../i18n-config';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -32,6 +32,7 @@ export const Header = ({ navigation: items, lang }: AllProps) => {
 
   useEffect(() => {
     close();
+    console.log('>>pathname', {pathname})
   }, [pathname]);
 
   return (

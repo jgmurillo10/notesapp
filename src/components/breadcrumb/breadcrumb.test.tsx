@@ -6,8 +6,18 @@ jest.mock('next/navigation', () => ({
 }));
 
 describe('Breadcrumb', () => {
+  const defaultProps = {
+    labels: {
+      home: 'Home',
+      assistants: 'Assistants',
+      assistant: 'Assistant',
+      login: '',
+      logout: '',
+      new: '',
+    }
+  }
   it('renders breadcrumb links correctly', () => {
-    render(<Breadcrumb />);
+    render(<Breadcrumb {...defaultProps} />);
 
     const homeLink = screen.getByText('Home');
     const assistantsLink = screen.getByText('Assistants');
@@ -19,7 +29,7 @@ describe('Breadcrumb', () => {
   });
 
   it('renders correct number of breadcrumb links', () => {
-    render(<Breadcrumb />);
+    render(<Breadcrumb {...defaultProps} />);
 
     const links = screen.getAllByRole('link');
     const assistantLabel = screen.getByText('Assistant');
@@ -29,7 +39,7 @@ describe('Breadcrumb', () => {
   });
 
   it('renders correct breadcrumb link hrefs', () => {
-    render(<Breadcrumb />);
+    render(<Breadcrumb {...defaultProps} />);
 
     const homeLink = screen.getByText('Home');
     const assistantsLink = screen.getByText('Assistants');
@@ -39,7 +49,7 @@ describe('Breadcrumb', () => {
   });
 
   it('renders assistant breadcrumb when assistant is present in the URL', () => {
-    render(<Breadcrumb />);
+    render(<Breadcrumb {...defaultProps} />);
 
     const assistantLink = screen.getByText('Assistant');
 
