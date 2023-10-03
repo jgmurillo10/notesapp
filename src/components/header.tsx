@@ -22,7 +22,6 @@ type AllProps = {
 export const Header = ({ navigation: items, lang }: AllProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { data: session, status } = useSession();
-  const [prevPathname, setPrevPathname] = useState('');
   const pathname = usePathname();
   const navigation = items.map((item) => ({
     name: item.name,
@@ -32,10 +31,7 @@ export const Header = ({ navigation: items, lang }: AllProps) => {
   const close = () => setMobileMenuOpen(false);
 
   useEffect(() => {
-    if (pathname !== prevPathname) {
-      close();
-      setPrevPathname(pathname);
-    }
+    close();
   }, [pathname]);
 
   return (
