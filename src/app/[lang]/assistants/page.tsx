@@ -5,7 +5,6 @@ import {
   CalendarIcon,
   ChatBubbleBottomCenterTextIcon,
 } from '@heroicons/react/24/outline';
-import { Breadcrumb } from '@/components/breadcrumb/breadcrumb';
 import { getClient } from 'configcat-node';
 
 async function getAssistantCreationFeatureFlag() {
