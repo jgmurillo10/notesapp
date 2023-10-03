@@ -31,7 +31,10 @@ describe('Header', () => {
   const lang = 'en';
 
   beforeEach(() => {
-    (useSession as jest.Mock).mockReturnValue({ data: null, status: 'loading' });
+    (useSession as jest.Mock).mockReturnValue({
+      data: null,
+      status: 'loading',
+    });
     (usePathname as jest.Mock).mockReturnValue('/');
   });
 
@@ -50,12 +53,18 @@ describe('Header', () => {
 
     navigationLinks.forEach((link, index) => {
       expect(link).toHaveTextContent(navigation[index].name);
-      expect(link).toHaveAttribute('href', `/${lang}/${navigation[index].href}`);
+      expect(link).toHaveAttribute(
+        'href',
+        `/${lang}/${navigation[index].href}`,
+      );
     });
   });
 
   test('renders login button when session is not available', () => {
-    (useSession as jest.Mock).mockReturnValue({ data: null, status: 'unauthenticated' });
+    (useSession as jest.Mock).mockReturnValue({
+      data: null,
+      status: 'unauthenticated',
+    });
     render(<Header navigation={navigation} lang={lang} />);
 
     const loginButton = screen.getByRole('button', { name: /log in/i });
@@ -66,7 +75,10 @@ describe('Header', () => {
   });
 
   test('renders logout button when session is available', () => {
-    (useSession as jest.Mock).mockReturnValue({ data: {}, status: 'authenticated' });
+    (useSession as jest.Mock).mockReturnValue({
+      data: {},
+      status: 'authenticated',
+    });
 
     render(<Header navigation={navigation} lang={lang} />);
 
@@ -82,14 +94,15 @@ describe('Header', () => {
     window.dispatchEvent(new Event('resize'));
   }
 
-  
   test('open mobile menu when on click', async () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     (usePathname as jest.Mock).mockReturnValue('/about');
 
     render(<Header navigation={navigation} lang={lang} />);
 
-    const mobileMenuButton = screen.getByRole('button', { name: /open main menu/i });
+    const mobileMenuButton = screen.getByRole('button', {
+      name: /open main menu/i,
+    });
     fireEvent.click(mobileMenuButton);
 
     expect(screen.getByRole('dialog')).toBeInTheDocument();

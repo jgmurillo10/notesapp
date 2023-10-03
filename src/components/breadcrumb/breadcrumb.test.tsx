@@ -14,8 +14,8 @@ describe('Breadcrumb', () => {
       login: '',
       logout: '',
       new: '',
-    }
-  }
+    },
+  };
   it('renders breadcrumb links correctly', () => {
     render(<Breadcrumb {...defaultProps} />);
 

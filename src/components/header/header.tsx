@@ -30,10 +30,7 @@ export const Header = ({ navigation: items, lang }: AllProps) => {
 
   const close = () => setMobileMenuOpen(false);
 
-  useEffect(() => {
-    close();
-    console.log('>>pathname', {pathname})
-  }, [pathname]);
+  useEffect(() => close(), [pathname]);
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
